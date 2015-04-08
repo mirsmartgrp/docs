@@ -1,0 +1,39 @@
+\documentclass[a4paper,11pt,twoside]{book}
+\usepackage{geometry}
+\geometry{a4paper,left=35mm,right=25mm, top=25mm, bottom=25mm} 
+\usepackage[utf8]{inputenc} 
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{helvet}
+\usepackage{graphicx}
+
+%package and settings for code listings
+\usepackage{color}
+\definecolor{keywordcolor}{RGB}{181,29,29}
+\usepackage{listings}
+\lstset{%	
+		basicstyle=\small, %
+		keywordstyle=\color{keywordcolor}\bfseries, %
+		language=Java
+}
+
+% Use sans-serif font
+%\renewcommand\familydefault{phv} 
+
+% Für deutsches Datumsformat und Kapitelbezeichnungen
+\usepackage[english]{babel}
+
+%Das Paket erzeugt ein anklickbares Verzeichnis in der PDF-Datei.
+\usepackage{hyperref}
+% Command for titlepage
+\input{./frontpage.tex}
+\title{Project Report}
+\author{Christian Neumann 2187932}
+\date{\today}
+
+% Dokument
+\begin{document}
+\titleSinglePageWithIndex{Smartwatches}{Project Report}{Nils Heyer, Maximilian Walter, Vincent Wochnik, Sascha Canders, Ron Gebauer, Christian Neumann}
+\input{./report.tex}
+
+\end{document}
