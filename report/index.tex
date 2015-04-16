@@ -1,0 +1,41 @@
+% Document class
+\documentclass[pdftex,10pt,a4paper]{report}
+
+% Specify Document Metadata
+\newcommand{\mytitle}{Minor Research \& Innovation\\Project Report}
+\newcommand{\myauthor}{Sascha Canders\\Ron Gebauer\\Nils Heyer\\Christian Neumann\\Maximilian Walter\\Vincent Wochnik}
+\newcommand{\mydate}{\today}
+
+% Template
+\include{00_resources/template}
+
+%Pictures
+\usepackage{graphicx}
+
+% Listings
+\include{00_resources/listings}
+
+\begin{document}
+
+% Pre pages
+\setcounter{page}{1}
+\include{01_pre/10_cover}
+\newpage
+\include{01_pre/20_toc}
+\cleardoublepage
+
+
+% Fancy must start here!
+\pagestyle{fancy}
+% Content pages
+% Every chapter has one subdirectory named like 10_chapter_name.
+% Chapters \input{} their sections within the index.tex file which itself
+% is \include{}d by this document.
+% Sections within a chapter may be named like 1_section.
+% Every chapter index first instruction is \shortchapter{Chapter name}.
+\include{10_introduction/index}
+\include{20_research/index}
+\include{30_analysis/index}
+\include{40_implementation/index}
+\include{50_evaluation/index}
+\end{document}

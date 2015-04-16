@@ -1,0 +1,56 @@
+% Packages
+\usepackage[helvetica]{quotchap}
+\usepackage{lscape}
+\usepackage{endnotes}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{placeins}
+\usepackage{hhline}
+\usepackage[english]{babel}
+\usepackage{listings} 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{pdfpages}
+\usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage{helvet}
+\usepackage{eurosym}
+\usepackage{tabularx}
+\usepackage{lscape,graphicx}
+
+% Page marign
+\setlength{\hoffset}{-3cm}
+\setlength{\textwidth}{18cm}
+\setlength{\textheight}{25cm}
+\setlength{\voffset}{-2cm}
+
+% Title, auhor and date for \maketitle
+\title{\mytitle}
+\author{\myauthor}
+\date{\mydate}
+
+% Fancy page header
+\lhead{\mytitle}
+\rhead{\chaptername}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\renewcommand{\familydefault}{\sfdefault }
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\makeatletter
+\renewcommand*{\chapterheadstartvskip}{\vspace*{-9\baselineskip}}
+\makeatother
+                                   
+\linespread {1.5}
+\parindent0mm
+
+% cool chapter numbers with \shortchapter command
+\newcommand{\HUGE}[1]{\fontsize{12mm}{14mm}\selectfont #1}
+\newcommand{\shortchapter}[1]{
+\renewcommand{\chaptername}{#1}
+\chapter{\chaptername}
+\vspace{-50pt}}
+
+% Enumeration
+\lstset{numbers=left, numberstyle=\tiny,basicstyle=\tiny, numbersep=6pt}
+

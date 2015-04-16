@@ -1,0 +1,27 @@
+\definecolor{lstnumbers}{rgb}{0.6,0.6,0.6}
+
+% default settings
+\lstset{
+    numbers           = left,
+    stepnumber        = 1,
+    numbersep         = 10pt,
+    numberstyle       = \small\color{lstnumbers},
+    basicstyle        = \ttfamily,
+    tabsize           = 4,
+}
+
+\definecolor{javared}{rgb}{0.6,0,0}
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35}
+\definecolor{javapurple}{rgb}{0.5,0,0.35}
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75}
+
+\lstset{
+    language          = java,
+    keywordstyle      = \color{javapurple}\bfseries,
+    stringstyle       = \color{javared},
+    commentstyle      = \color{javagreen},
+    morecomment       = [s][\color{javadocblue}]{/**}{*/},
+    showspaces        = false,
+    showstringspaces  = false
+}
+
