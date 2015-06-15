@@ -2,14 +2,14 @@
 
 \section{The Problem of illustrating Movements and Gestures}
 
-The hardest part of the analysis was, getting from the raw data of the sensors to a fitting model so that it can be easiliy analysed. The problem in this case is that it isn't just three dimansonal movement, like simple gestures, but three dimansional movements which varies also in time, because an exercise could be done with different speed and needed still been recognized. The data the sensors of the smartwatch delivers are just three dimansional data for acceleration/location and the time. So we needed a way to transform this data into a more universial way or reduce the amount of data needed for the analysis. To tackle this, possible solutions were searched for.
+The hardest part of the analysis was, getting from the raw data of the sensors to a fitting model, so that it can be analysed easily. The problem in this case is that it is not just three 	dimensional movement, like simple gestures, but three dimensional movements which varies also in time, because an exercise could be done with different speed and still needs to be recognized. The data the sensors of the smartwatch deliver, are just three dimensional data for acceleration/location and the time. So a way to transform this data into a more universal way or reduce the amount of data was needed for the analysis. To tackle this, possible solutions were searched for.
 
 \section{Viable Approaches to the Problem}
 
-6 solutions to tackle the problem with the spacial model of mevements were found. Some of the solutions could also be combinded to work together. The first appraoch was, to make all data independent from a point in space and just calculate with relative data. Ignoring some kind of data in the calaculation,like rotation on a specific layer, for every kind of exercise,was a second approach. To split the data into time and three dimansional movements and checking each of them seperatly,was the third approach. Approach four and five were, a neural network or hidden markov models. The last viable approach was creating an mathematical function in four dimensions and compare the data from the exercises with this function.
+Six solutions to tackle the problem with the spacial model of movements were found. Some of the solutions could also be combined to work together. The first approach was to make all data independent from a point in space and just calculate with relative data. Ignoring some kind of data in the calaculation, like rotation on a specific layer, for every kind of exercise, was the second approach. To split the data into time and three dimensional movements and checking each of them seperatly, was the third approach. Approach four and five were a neural network, or the hidden markov models. The last viable approach was creating an mathematical function in four dimensions and compare the data from the exercises using this function.
 \newline
-\newline 
-To check which was the best approach, a list with weighted criterias were created.
+\newline
+To check which was the best approach, a list with weighted criteria were created.
 
 \begin{table}[h]
 \begin{tabular}{|l|l|}
@@ -28,7 +28,7 @@ To check which was the best approach, a list with weighted criterias were create
 \hline
 	accuracy of solution [flexibility] & 4\\
 \hline
-	time to set up solution ( after impl ) 
+	time to set up solution ( after impl )
 [learning phase] & 3\\
 \hline
 
@@ -36,7 +36,7 @@ To check which was the best approach, a list with weighted criterias were create
 
 \end{table}
 
-To rate each approach a scale from 1-5 were used, were 1 was very unimportant and 4 ver important. The 5th value were used for a K.O criteria which must be included.
+To rate each approach, a scale from one to five were used, were 1 was very unimportant and 4 very important. The fifth value was used for a K.O criteria, which must be included.
 
 \begin{table}[h]
 \begin{tabular}{|l|c|c|c|c|c|c|c|}
@@ -59,9 +59,10 @@ solution 6 &\cellcolor[HTML]{38761d}++&\cellcolor[HTML]{38761d}++&\cellcolor[HTM
 \end{table}
 
 ! TO DO WHY WE CHOOSED HMM!
+%and decide wether HMM is written Hidden Markov or hidden markov. Alse decide for one time. here past, 01_hmm in praeteritum. 
 
 \section{Selected Approach}
- 
+
 \input{50_spacial_model_of_movement_and_gestures/01_hmm}
 \input{50_spacial_model_of_movement_and_gestures/02_kmeans}
 \input{50_spacial_model_of_movement_and_gestures/03_filtering}
