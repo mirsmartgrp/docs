@@ -1,14 +1,40 @@
 \shortchapter{Conclusion}
+\subsection{Broader Overview}
+Overall the application works principally. A user is able to teach the application new exercises and can then get feedback when exercising. There are some functions that are not yet implemented and some that need to be improved to make things easier to use and understand.
+
+The project proved that the movement data from a smartwatch can be used to analyse and compare it to another set of data to see if they are identical.
+
+The application is more useful for use in phyisiotherapie than in fitness because the feedback and learning of exercises are more effective if the exercise is done precise and careful. While it can be used for Fitness it would be less useful for experienced users. New users can profit from the help in learning the exercise, but with enought training they will not need the application anymore.
+
 \subsection{Discussion}
-One thing that gave us some problem was the storing of data, for example the json files, that records the exercise data that is used to calculate the correct movement. We saved them in loose files, which later made it difficult to make sure they were not changed while running the application. We discussed using a server and database to have videos and instructions for the exercises that can then be downloaded one by one. Saved data then would be available, even when the devices are offline, but cost some diskspace. The problem is now that we have to rewrite parts of our coruse when we want to use a server for the application because currently everything is built on having the needed data only local.
+The first problem in the project was part of the storing of the needed data. The json files, that record the exercise data that are used to calculate the correct movement. They were saved in loose files, which later made it difficult to make sure they were not changed while running the application. It was discussed using a server and database to have videos and instructions for the exercises that can then be downloaded one by one. Saved data then would be available, even when the devices are offline, but cost some diskspace. The problem is now that parts of the code had to be rewritten when a server would be added because most of the application is built on having only local files.
 
-Another problem we had during developing the application was that, as far as we know, Android Wear and for mobile needs to be in one project. This way they get the same store id. That means we had to develop these two parts in one project and could not seperate them completly. While this was not that much of a problem in practice, we would have like to work on them independently.
+Another problem during developing the application was that, Android Wear and the Android smartphone have to be in the same project to work correclty together. This way they get the same store id. That means these parts had to be developed in the same project. This was not a big problem in praxis, but developing independently would have been better.
 
-In developing the GUI, we decided to be more focused on the function than the form. This lead to the GUI, only working correctly in portrait format. The landscape format has many problems. In future we should at least consider other formats when developing so it would not be a big problem later when things need to get changed.
+In developing the GUI, it was decided to be more focused on the function than the form. This lead to the GUI, only working correctly in portrait format. The landscape format has many problems. In future it should at least considered to use other formats when developing so the GUI would not be a big problem later when things need to get changed.
 
 
-While we wrote some tests in the beginning mostly for the connection between phone and wear. We did not write complete test that could be run automaticly. This lead to us testing manual by using the application directly. This made testing only possible if the interface was already implemented for the to be tested part.
-Because of this missmanagement the GUI was developed side by side. While this worked reasonably well for a while, the problem was that we later changed some aspect of the application and had to change some parts of the GUI as well.
-We also had the problem that parts of the application that were not covered by the GUI would not, or not enough tested. This results to a completely new problem shortly, before development was finished that had to be found and fixed in a very limited time frame.
-In future we would write test that are not dependend on the GUI but work independed.
+While some test were written in the beginning, they were mostly for the connection between phone and watch. Automatic test for the whole application were not written. This lead to the test beiang executed manualy. This made testing only possible if the interface was already implemented for the to be tested part.
+Because of this missmanagement the GUI was developed side by side with the logic. While this worked reasonably well for a while, the problem was that later some aspect of the application changed and the GUI had to be changed at the same time.
+In addition parts of the application that were not covered by the GUI could not be easy tested. This lead to a completely new problem shortly before development was finished. These not testable parts were not working and had to be fixed without any good indication were the error was produced.
+In future test should be written idependently and should not be reliant on the GUI.
+
 \subsection{Further Work}
+One thing that is planned to be implemented is a server that will allow users and doctors to access the data of the patient to evaluate the exercises that were done. This would allow easier analysis of the data by the doctor and gives the user the ability to check their own data.
+The server would also save datasets in the cloud so there is not as much space used on the smartphone.
+
+As part of the server the history view needs to be implemented as well. This view would then be able to show detailed feedback about the exercises that were done by the user. It would show how the exercise was executed and what the user did wrong while doing it. This will give the user and doctor a better overview over the patients progress. The view will also be able to give improvement tips to the user to help him do exercises correctly.
+
+A big upgrade of the application would be the integration of more sensors like a heartbeat sensor to check it for the user. In addition to additional sensor in the watch it is planed to add connection with other wearables to get extra data. This will either give completly new data that can be used to check the exercises, or expand the gathering of movement data to other limbs than the arms. This includes two arms, both legs, back and throat movement. With the correct wearables the whole body could be analysed.
+
+Apple integration was not part of the development process because the apple watch was not avaliable to develop. Teere also existed a time when the sensor were not accessable by developers. In the futur the apple watch in conjuction with the iPhone will be developed to be on the same stand of the android application.
+
+Later there is also the plan to show the exercises in a graphical format that can be shown to the user to so he can better visualize how his exercise was executed. This would then also be included in the history view. 
+
+THe analysis will also be improved later. this includes better comparing of the movement by improving the algorythem that is used. The filtering of useless data is also planned to be more precise. Lastly the errorquota has to be improved.
+
+To make sure the application works correctly there will be more test for the application. There should be  unittest for the inner workings of the applications. In addition to that there should be more user test with normal users to see how well they can understand and use the application. The should also be test with physiotherapist to test how a professional understands the applications and what would be needed for him to use it with patients.
+
+The last addition to the application would be an inprovement to the GUI. While it is functional at the moment there is lots of room for improvement. The most improtant update would be to make the GUI usable in portrait and landscape mode. The different views should also be improved to explain themself better so user can use the application more intuitively.
+
+
