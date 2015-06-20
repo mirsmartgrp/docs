@@ -1,0 +1,107 @@
+\section{Use Cases}
+\begin{table}[H]
+	\begin{tabular}{|l|l|l|l|l|l|} \hline
+		\textbf{Code:} & UC01 & \textbf{Refines:} & UC02 & \textbf{Name:} & control an exercise \\ \hline
+		\textbf{Actors:} & \multicolumn{5}{l|}{user} \\ \hline
+		\textbf{Goal:} & \multicolumn{5}{l|}{the user executes an exercise and the app tells if the execution is done in the right way} \\ \hline
+		\textbf{Stakeholders/Interests:} & \multicolumn{5}{l|}{user, doctor} \\ \hline
+		\textbf{Preconditions:} & \multicolumn{5}{l|}{\parbox{0.75\textwidth}{
+			\begin{itemize}[itemsep=-5]
+				\item the user has installed the app
+				\item the selected exercise has data available
+			\end{itemize}
+		}} \\ \hline
+		\textbf{Basic-Flow:} & \multicolumn{5}{l|}{\parbox{0.75\textwidth}{
+			\begin{enumerate}[itemsep=-5]
+				\item user starts app
+				\item user selects exercise to be controlled ( UC02 )
+				\item user exercises
+				\item the app evaluates the data
+				\item the app shows the result
+				\item the user receives advice
+			\end{enumerate}
+		}} \\ \hline
+		\textbf{Variations:} & \multicolumn{5}{l|}{\parbox{0.75\textwidth}{
+			$ $\\on step 5 :
+			\begin{itemize}[leftmargin=2.5cm,itemsep=-5]
+				\item[result $=$ true ] $\rightarrow$ the app shows a message that the exercise was done in the right way 
+				\item[result $=$ false] $\rightarrow$ the app shows advice how to do the exercise in the right way
+			\end{itemize}
+		}} \\ \hline
+		\textbf{Exceptions:} & \multicolumn{5}{l|}{\parbox{0.75\textwidth}{
+			$ $\\on step 1:
+			\begin{enumerate}[itemsep=-5]
+				\item no connection to wearable, connection suspended $\rightarrow$ app shows error message.
+				\item app not started on watch / phone $\rightarrow$ app starts automatically
+			\end{enumerate}
+		}} \\ \hline
+		\textbf{Postconditions:} & \multicolumn{5}{l|}{exercise added to history} \\ \hline
+		\textbf{Version:} & \multicolumn{2}{l|}{1.0} & \textbf{Author:} & \multicolumn{2}{l|}{Nils Heyer, Maximilian Walter} \\ \hline
+	\end{tabular}
+	\caption{UC01 -- Controle an Exercise}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{|l|l|l|l|l|l|} \hline
+		\textbf{Code:} & UC02 & \textbf{Refines:} &  & \textbf{Name:} & user selects an exercise \\ \hline
+		\textbf{Actors:} & \multicolumn{5}{l|}{user} \\ \hline
+		\textbf{Goal:} & \multicolumn{5}{l|}{the user selects the exercise he/ she wants the app to control} \\ \hline
+		\textbf{Stakeholders/Interests:} & \multicolumn{5}{l|}{user, doctor} \\ \hline
+		\textbf{Preconditions:} & \multicolumn{5}{l|}{\parbox{0.75\textwidth}{
+			\begin{itemize}[itemsep=-5]
+				\item phone and wearable are connected
+			\end{itemize}
+		}} \\ \hline
+		\textbf{Basic-Flow:} & \multicolumn{5}{l|}{\parbox{0.75\textwidth}{
+			\begin{enumerate}[itemsep=-5]
+				\item the app receives a list of exercises from the server
+				\item the user selects the exercise of choice
+				\item the app checks if data for the selected exercise are available
+			\end{enumerate}
+		}} \\ \hline
+		\textbf{Variations:} & \multicolumn{5}{l|}{
+			step 3 : data is available → continue , data not available → download data
+		} \\ \hline
+		\textbf{Exceptions:} & \multicolumn{5}{l|}{\parbox{0.75\textwidth}{
+			\begin{itemize}[leftmargin=1.55cm,itemsep=-5]
+				\item[step 1] no connection to server :  only stored exercises are shown
+				\item[step 1] wifi/3G disabled  : ask user to turn on wifi/3G
+				\item[step 3] no connection to the server, connection gets suspended → step
+			\end{itemize}
+		}} \\ \hline
+		\textbf{Postconditions:} & \multicolumn{5}{l|}{exercise defined, data available for choosen exercise} \\ \hline
+		\textbf{Version:} & \multicolumn{2}{l|}{1.0} & \textbf{Author:} & \multicolumn{2}{l|}{Nils Heyer, Maximilian Walter} \\ \hline
+	\end{tabular}
+	\caption{UC02 -- User Selects an Exercise}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{|l|l|l|l|l|l|} \hline
+		\textbf{Code:} & UC03 & \textbf{Refines:} &  & \textbf{Name:} & user views his/her previous exercises \\ \hline
+		\textbf{Actors:} & \multicolumn{5}{l|}{user} \\ \hline
+		\textbf{Goal:} & \multicolumn{5}{l|}{the user gets an overview over exercises that have been done in the past} \\ \hline
+		\textbf{Stakeholders/Interests:} & \multicolumn{5}{l|}{user, doctor} \\ \hline
+		\textbf{Preconditions:} & \multicolumn{5}{l|}{\parbox{0.75\textwidth}{
+			\begin{itemize}[itemsep=-5]
+				\item phone and wearable are connected, history data available
+			\end{itemize}
+		}} \\ \hline
+		\textbf{Basic-Flow:} & \multicolumn{5}{l|}{\parbox{0.75\textwidth}{
+			\begin{enumerate}[itemsep=-5]
+				\item user decides to watch history
+				\item app shows a list of previous exercises
+				\item the user selects an exercise
+				\item the user sees the detail view of the exercise.
+			\end{enumerate}
+		}} \\ \hline
+		\textbf{Variations:} & \multicolumn{5}{l|}{\parbox{0.75\textwidth}{
+			$-$
+		}} \\ \hline
+		\textbf{Exceptions:} & \multicolumn{5}{l|}{\parbox{0.75\textwidth}{
+			connection to wearable gets lost: try to reconnect/ show error msg on phone
+		}} \\ \hline
+		\textbf{Postconditions:} & \multicolumn{5}{l|}{$-$} \\ \hline
+		\textbf{Version:} & \multicolumn{2}{l|}{1.0} & \textbf{Author:} & \multicolumn{2}{l|}{Nils Heyer, Maximilian Walter} \\ \hline
+	\end{tabular}
+	\caption{UC03 -- User Views his/her Previous Exercises}
+\end{table}
