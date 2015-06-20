@@ -1,4 +1,44 @@
 \section{Use Cases}
+For this project, the decision was made to use cases as user scenarios. Therefore, the three most important use cases were created, which are explained in more detail in the next few paragraphs.
+\\[10pt]
+The first use case, Table \ref{usae}, deals with the selection of an exercise.
+\begin{table}[H]
+	\begin{tabular}{|l|l|l|l|l|l|} \hline
+		\textbf{Code:} & UC02 & \textbf{Refines:} &  & \textbf{Name:} & user selects an exercise \\ \hline
+		\textbf{Actors:} & \multicolumn{5}{l|}{user} \\ \hline
+		\textbf{Goal:} & \multicolumn{5}{l|}{the user selects the exercise he/ she wants the app to control} \\ \hline
+		\textbf{Stakeholders/Interests:} & \multicolumn{5}{l|}{user, doctor} \\ \hline
+		\textbf{Preconditions:} & \multicolumn{5}{l|}{\parbox{0.75\textwidth}{
+			\begin{itemize}[itemsep=-5]
+				\item phone and wearable are connected
+			\end{itemize}
+		}} \\ \hline
+		\textbf{Basic-Flow:} & \multicolumn{5}{l|}{\parbox{0.75\textwidth}{
+			\begin{enumerate}[itemsep=-5]
+				\item the app receives a list of exercises from the server
+				\item the user selects the exercise of choice
+				\item the app checks if data for the selected exercise are available
+			\end{enumerate}
+		}} \\ \hline
+		\textbf{Variations:} & \multicolumn{5}{l|}{
+			step 3 : data is available → continue , data not available → download data
+		} \\ \hline
+		\textbf{Exceptions:} & \multicolumn{5}{l|}{\parbox{0.75\textwidth}{
+			\begin{itemize}[leftmargin=1.55cm,itemsep=-5]
+				\item[step 1] no connection to server :  only stored exercises are shown
+				\item[step 1] wifi/3G disabled  : ask user to turn on wifi/3G
+				\item[step 3] no connection to the server, connection gets suspended → step
+			\end{itemize}
+		}} \\ \hline
+		\textbf{Postconditions:} & \multicolumn{5}{l|}{exercise defined, data available for choosen exercise} \\ \hline
+		\textbf{Version:} & \multicolumn{2}{l|}{1.0} & \textbf{Author:} & \multicolumn{2}{l|}{Nils Heyer, Maximilian Walter} \\ \hline
+	\end{tabular}
+	\caption{UC02 -- User Selects an Exercise}
+	\label{usae}
+\end{table}
+
+\clearpage
+The next use case, table \ref{cae}, shows how the analysis of the performed exercise runs.
 \begin{table}[H]
 	\begin{tabular}{|l|l|l|l|l|l|} \hline
 		\textbf{Code:} & UC01 & \textbf{Refines:} & UC02 & \textbf{Name:} & control an exercise \\ \hline
@@ -39,42 +79,11 @@
 		\textbf{Version:} & \multicolumn{2}{l|}{1.0} & \textbf{Author:} & \multicolumn{2}{l|}{Nils Heyer, Maximilian Walter} \\ \hline
 	\end{tabular}
 	\caption{UC01 -- Controle an Exercise}
+	\label{cae}
 \end{table}
 
-\begin{table}[H]
-	\begin{tabular}{|l|l|l|l|l|l|} \hline
-		\textbf{Code:} & UC02 & \textbf{Refines:} &  & \textbf{Name:} & user selects an exercise \\ \hline
-		\textbf{Actors:} & \multicolumn{5}{l|}{user} \\ \hline
-		\textbf{Goal:} & \multicolumn{5}{l|}{the user selects the exercise he/ she wants the app to control} \\ \hline
-		\textbf{Stakeholders/Interests:} & \multicolumn{5}{l|}{user, doctor} \\ \hline
-		\textbf{Preconditions:} & \multicolumn{5}{l|}{\parbox{0.75\textwidth}{
-			\begin{itemize}[itemsep=-5]
-				\item phone and wearable are connected
-			\end{itemize}
-		}} \\ \hline
-		\textbf{Basic-Flow:} & \multicolumn{5}{l|}{\parbox{0.75\textwidth}{
-			\begin{enumerate}[itemsep=-5]
-				\item the app receives a list of exercises from the server
-				\item the user selects the exercise of choice
-				\item the app checks if data for the selected exercise are available
-			\end{enumerate}
-		}} \\ \hline
-		\textbf{Variations:} & \multicolumn{5}{l|}{
-			step 3 : data is available → continue , data not available → download data
-		} \\ \hline
-		\textbf{Exceptions:} & \multicolumn{5}{l|}{\parbox{0.75\textwidth}{
-			\begin{itemize}[leftmargin=1.55cm,itemsep=-5]
-				\item[step 1] no connection to server :  only stored exercises are shown
-				\item[step 1] wifi/3G disabled  : ask user to turn on wifi/3G
-				\item[step 3] no connection to the server, connection gets suspended → step
-			\end{itemize}
-		}} \\ \hline
-		\textbf{Postconditions:} & \multicolumn{5}{l|}{exercise defined, data available for choosen exercise} \\ \hline
-		\textbf{Version:} & \multicolumn{2}{l|}{1.0} & \textbf{Author:} & \multicolumn{2}{l|}{Nils Heyer, Maximilian Walter} \\ \hline
-	\end{tabular}
-	\caption{UC02 -- User Selects an Exercise}
-\end{table}
-
+\clearpage
+The third and final use case, table \ref{history}, includes a function that is not implemented in the current development status of the application.
 \begin{table}[H]
 	\begin{tabular}{|l|l|l|l|l|l|} \hline
 		\textbf{Code:} & UC03 & \textbf{Refines:} &  & \textbf{Name:} & user views his/her previous exercises \\ \hline
@@ -104,4 +113,5 @@
 		\textbf{Version:} & \multicolumn{2}{l|}{1.0} & \textbf{Author:} & \multicolumn{2}{l|}{Nils Heyer, Maximilian Walter} \\ \hline
 	\end{tabular}
 	\caption{UC03 -- User Views his/her Previous Exercises}
+	\label{history}
 \end{table}
