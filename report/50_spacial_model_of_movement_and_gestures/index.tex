@@ -1,12 +1,9 @@
 \shortchapter{Spacial Model of Movement and Gestures}
-
 \section{The Problem of illustrating Movements and Gestures}
-
-The hardest part of the analysis was getting from the raw data of the sensors to a fitting model, so that it can be analysed easily. The problem in this case is that it is not just three 	dimensional movement, like simple gestures, but three dimensional movements which varies also in time, because an exercise could be done with different speed and still needs to be recognized. The data the sensors of the smartwatch deliver, are just three dimensional data for acceleration/location and the time. So a way to transform this data into a more universal way or to reduce the amount of data was needed for the analysis. To tackle this need, possible solutions were searched for.
+The hardest part of the analysis was getting from the raw data of the sensors to a fitting model, so that it can be analyzed easily. The problem in this case is that it is not just three-dimensional movement, like simple gestures, but three-dimensional movements, which varies also in time, because an exercise could be done with different speed and still needs to be recognized. The data the sensors of the smartwatch deliver are just three-dimensional data for acceleration/location and the time. So a way to transform this data into a more universal way or to reduce the amount of data was needed for the analysis. To tackle this need, possible solutions were searched for.
 
 \section{Viable Approaches to the Problem}
-
-Six solutions to tackle the problem of the spacial model of movements were found. Some of the solutions could also be combined to work together. The first approach was to make all data independent from a point in space and calculate with relative data. Ignoring some kind of data in the calaculation, like rotation on a specific layer, for every kind of exercise, was the second approach. To split the data into time and three dimensional movements and checking each of them seperatly, was the third approach. Approach four and five were a neural network, or the Hidden Markov Models. The last viable approach was creating a mathematical function in four dimensions and compare the data from the exercises using this function.
+Six solutions to tackle the problem of the spatial model of movements were found. Some of the solutions could also be combined to work together. The first approach was to make all data independent from a point in space and calculate with relative data. Ignoring some kind of data in the calculation, like rotation on a specific layer, for every kind of exercise, was the second approach. To split the data into time and three-dimensional movements and checking each of them separately, was the third approach. Approach four and five were a neural network, or the Hidden Markov Models. The last viable approach was creating a mathematical function in four dimensions and compares the data from the exercises using this function.
 \newline
 \newline
 To check which was the best approach, a list with weighted criteria was created.
@@ -33,10 +30,10 @@ To check which was the best approach, a list with weighted criteria was created.
 \hline
 
 \end{tabular}
-\caption{ criteria and weight  }
+\caption{Criteria and weight}
 \end{table}
 
-To rate each approach, a scale from one to five was used, were one is very unimportant and four is very important. The fifth value is used for a K.O criteria, which must be included.
+To rate each approach, a scale from one to five was used, were one is very unimportant and four is very important. The fifth value is used for K.O criteria, which must be included.
 
 \begin{table}[h]
 \begin{tabular}{|l|c|c|c|c|c|c|c|}
@@ -56,11 +53,10 @@ solution 5 &\cellcolor[HTML]{38761d}++&\cellcolor[HTML]{93c47d}+&\cellcolor[HTML
 solution 6 &\cellcolor[HTML]{38761d}++&\cellcolor[HTML]{38761d}++&\cellcolor[HTML]{dd7e6b}-&\cellcolor[HTML]{38761d}++&\cellcolor[HTML]{dd7e6b}-&\cellcolor[HTML]{dd7e6b}-&\cellcolor[HTML]{dd7e6b}-\\
 \hline
 \end{tabular}
-\caption{ solutions rating }
+\caption{Solutions rating}
 \end{table}
 
-As in the table solutions ratings is visible, the most viable approach was splitting the time and the three dimansional movement into two seperate analysis, because it has the best values for all criteria. For the analysis of the three dimensional movements, the Hidden Markov Model approch was choosen, because it can easily been used with the seperation approach and the only major disadvantage is that it takes more time to set up the solution. 
-%and decide wether HMM is written Hidden Markov or hidden markov.
+As in the table solutions ratings is visible, the most viable approach was splitting the time and the three dimensional movement into two separate analysis, because it has the best values for all criteria. For the analysis of the three dimensional movements, the Hidden Markov Model approach was chosen, because it can easily been used with the separation approach and the only major disadvantage is that it takes more time to set up the solution. %and decide whether HMM is written Hidden Markov or hidden markov.
 
 \section{Selected Approach}
 
