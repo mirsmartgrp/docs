@@ -18,8 +18,11 @@
 \begin{document}
 
 % Pre pages
+\renewcommand{\thepage}{\roman{page}}% Roman numerals for page counter
 \setcounter{page}{1}
 \include{01_pre/10_cover}
+\newpage
+\include{02_summary/summary}
 \newpage
 \include{01_pre/20_toc}
 \cleardoublepage
@@ -33,7 +36,8 @@
 % is \include{}d by this document.
 % Sections within a chapter may be named like 1_section.
 % Every chapter index first instruction is \shortchapter{Chapter name}.
-\include{02_summary/summary}
+\renewcommand{\thepage}{\arabic{page}}% Arabic numerals for page counter
+\setcounter{page}{1}
 \include{10_introduction/index}
 \include{20_movement_exercise_in_healthcare/index}
 \include{30_user_scenario/index}
